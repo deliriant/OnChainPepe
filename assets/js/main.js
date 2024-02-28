@@ -1,7 +1,4 @@
 /*------------------------------------------------
-Template Name: Imroz - Html5 Agency & Portfolio Template
-All Main Js Here  
-
 Index All JS 
 -----------------------
         01. Wow Active

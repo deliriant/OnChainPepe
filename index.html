@@ -41,7 +41,7 @@
         <header class="header-area formobile-menu header--transparent default-color">
             <div class="header-wrapper" id="header-wrapper">
                 <div class="header-left">
-                    <div class="logo"><a href="/"><img src="assets/images/favicon.svg" alt="OnChain Pepe"></a>
+                    <div class="logo"><a href="#"><img src="assets/images/favicon.svg" alt="OnChain Pepe"></a>
                     </div>
                 </div>
                 <div class="header-right">
@@ -389,6 +389,9 @@
                                         <img style="margin-right: 5px;" width="24px" src="assets/images/charts/geckoterminal.png" alt="geckoterminal"></img>
                                         <a href="https://www.geckoterminal.com/eth/pools/0xf757cc8c9dad83b4a0d0ebfec71cb570127d9923" target="_blank">Gecko Terminal</a>
                                         <br />
+                                        <img style="margin-right: 5px;" width="24px" src="assets/images/charts/defined.png" alt="defined"></img>
+                                        <a href="https://www.defined.fi/eth/0xf757cc8c9dad83b4a0d0ebfec71cb570127d9923?cache=e59bf&quoteToken=token0" target="_blank">Defined.fi</a>
+                                        <br />
                                     </p>
                                     <p class="description">Some centralized exchanges may (or may have already) list OnChainPepe token ($OCP404) for trading. However, <span style="color: red;">we haven't listed it on any YET</span>, so please be careful and trade through Uniswap until we announce CEX listings. <br/>Also, always verify the contract address of the token you are buying on decentralized exchanges and make sure it is the correct one so you don't lose your hard-earned money!</p>
                                     <!--<div class="button-group purchase-btn">
@@ -475,7 +478,7 @@
                     <div class="col-lg-12">
                         <div class="section-title text-center">
                             <span class="subtitle">Donations</span>
-                            <h2 class="title">Want to make a donation?</h2>
+                            <h2 class="title">Want to contribute to the project?</h2>
                             <p class="description">If you would like to donate to the team<br>
                                 Send us ERC20 tokens to the following ENS domain:<br />
                                 <span style="color: var(--color-primary-1); font-size: large;">ocp404.eth</span><br>
@@ -754,7 +757,7 @@
                                 <div class="icon">
                                     <i class="fas fa-wallet fa-3x" style="color: #0e7d1b"></i>
                                 </div>
-                                <h2><span class="counter">1500</span>+</h2>
+                                <h2><span class="counter"><div id="totalSupplyElement"></div></span></h2>
                                 <p class="description" style="color:#b9b9b9">Token Holders</p>
                             </div>
                         </div>
@@ -788,7 +791,7 @@
                                         <div class="service service__style--1" >
                                             <div class="thumbnail_inner">
                                                 <div class="thumbnail"><img src="assets/images/social/tweet.png"
-                                                        width="80px" alt="Follow OnChainPepe on Twitter."></div>
+                                                        width="150px" alt="Follow OnChainPepe on Twitter."></div>
                                             </div>
                                             <div class="content">
                                                 <h4 class="title">Twitter</h4>
@@ -801,7 +804,7 @@
                                         <div class="service service__style--1" >
                                             <div class="thumbnail_inner">
                                                 <div class="thumbnail"><img src="assets/images/social/tel.png"
-                                                        width="80px" alt="Follow OnChainPepe on Telegram."></div>
+                                                        width="150px" alt="Follow OnChainPepe on Telegram."></div>
                                             </div>
                                             <div class="content">
                                                 <h4 class="title">Telegram</h4>
@@ -814,7 +817,7 @@
                                         <div class="service service__style--1" >
                                             <div class="thumbnail_inner">
                                                 <div class="thumbnail"><img src="assets/images/social/git.png"
-                                                        width="80px" alt="Follow OnChainPepe on Github."></div>
+                                                        width="150px" alt="Follow OnChainPepe on Github."></div>
                                             </div>
                                             <div class="content">
                                                 <h4 class="title">Github</h4>
@@ -827,7 +830,7 @@
                                         <div class="service service__style--1" >
                                             <div class="thumbnail_inner">
                                                 <div class="thumbnail"><img src="assets/images/social/medium.png"
-                                                        width="80px" alt="Follow OnChainPepe on medium."></div>
+                                                        width="150px" alt="Follow OnChainPepe on medium."></div>
                                             </div>
                                             <div class="content">
                                                 <h4 class="title">Medium</h4>
@@ -1065,6 +1068,22 @@
         </div>
         <!-- js  
 ======================================-->
+
+
+
+
+<script>
+    // Make a GET request to your Express server
+    fetch('https://ocp404totalsupply.vercel.app/api/totalsupply')
+      .then(response => response.json())
+      .then(data => {
+        // Update the HTML element with the received value
+        document.getElementById('totalSupplyElement').innerText = `Total Supply: ${data.totalSupply}`;
+      })
+      .catch(error => {
+        console.error('Error fetching total supply:', error);
+      });
+  </script>
 
 
         <!-- modernizer JS -->
