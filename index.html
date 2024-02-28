@@ -1069,23 +1069,6 @@
         <!-- js  
 ======================================-->
 
-
-
-
-<script>
-    // Make a GET request to your Express server
-    fetch('https://ocp404totalsupply.vercel.app/api/totalsupply')
-      .then(response => response.json())
-      .then(data => {
-        // Update the HTML element with the received value
-        document.getElementById('totalSupplyElement').innerText = `Total Supply: ${data.totalSupply}`;
-      })
-      .catch(error => {
-        console.error('Error fetching total supply:', error);
-      });
-  </script>
-
-
         <!-- modernizer JS -->
         <script src="assets/js/vendor/modernizer.min.js"></script>
         <!-- jquery JS -->
@@ -1117,6 +1100,20 @@
 
         <!-- main JS -->
         <script src="assets/js/main.js"></script>
+
+
+        <script>
+            // Make a GET request to your Express server
+            fetch('https://ocp404totsupply.vercel.app/api/totalsupply')
+                .then(response => response.json())
+                .then(data => {
+                    // Update the HTML element with the received value
+                    document.getElementById('totalSupplyElement').innerText = `${data.totalSupply}`;
+                })
+                .catch(error => {
+                    console.error('Error fetching total supply:', error);
+                });
+        </script>
 
 </body>
 
