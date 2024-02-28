@@ -732,11 +732,9 @@
                         <div class="im_counterup">
                             <div class="inner">
                                 <div class="icon">
-                                    <i class="fab fa-telegram-plane fa-3x" style="color: #0088cc"></i>
+                                    <i class="fas fa-wallet fa-3x" style="color: #0e7d1b"></i>
                                 </div>
-                                <h2 class="counter">
-                                    <span id="telegram-users">NaH</span>
-                                </h2>
+                                <h2><span class="counter"><div id="tokenHoldersElement"></div></span></h2>
                                 <p class="description" style="color:#b9b9b9">Token Holders</p>
                             </div>
                         </div>
@@ -1132,6 +1130,19 @@
                     console.error('Error fetching total supply:', error);
                 });
         </script>
+
+<script>
+    // Make a GET request to your Express server
+    fetch('https://ocp404tokenholders.vercel.app/api/numberOfHolders')
+        .then(response => response.json())
+        .then(data => {
+            // Update the HTML element with the received value
+            document.getElementById('tokenHoldersElement').innerText = `${data.numberOfHolders}`;
+        })
+        .catch(error => {
+            console.error('Error fetching total supply:', error);
+        });
+</script>
 
 </body>
 
