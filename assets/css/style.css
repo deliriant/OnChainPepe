@@ -8261,10 +8261,11 @@ iframe {
 .section-title span.subtitle {
   font-weight: 600;
   letter-spacing: 0.5px;
-  line-height: 18px;
-  font-size: 16px;
+  line-height: 45px;
+  font-size: 30px;
   border-radius: 4px;
   margin-bottom: 12px; 
+  padding: 5px;
   }
 
 .section-title h3 {
