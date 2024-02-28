@@ -742,12 +742,10 @@
                         <div class="im_counterup">
                             <div class="inner">
                                 <div class="icon">
-                                    <i class="fab fa-twitter fa-3x" style="color: #1DA1F2"></i>
+                                    <i class="fas fa-wallet fa-3x" style="color: #0e7d1b"></i>
                                 </div>
-                                <h2 class="counter">
-                                    <span id="twitter-followers">NaH</span>
-                                </h2>
-                                <p class="description" style="color:#b9b9b9">Twitter Followers</p>
+                                <h2><span class="counter"><div id="totalSupplyElement"></div></span></h2>
+                                <p class="description" style="color:#b9b9b9">Total Supply</p>
                             </div>
                         </div>
                     </div>
@@ -757,8 +755,8 @@
                                 <div class="icon">
                                     <i class="fas fa-wallet fa-3x" style="color: #0e7d1b"></i>
                                 </div>
-                                <h2><span class="counter"><div id="totalSupplyElement"></div></span></h2>
-                                <p class="description" style="color:#b9b9b9">Token Holders</p>
+                                <h2><span class="counter"><div id="circulatingSupplyElement"></div></span></h2>
+                                <p class="description" style="color:#b9b9b9">Circulating Supply</p>
                             </div>
                         </div>
                     </div>
@@ -1109,6 +1107,21 @@
                 .then(data => {
                     // Update the HTML element with the received value
                     document.getElementById('totalSupplyElement').innerText = `${data.totalSupply}`;
+                })
+                .catch(error => {
+                    console.error('Error fetching total supply:', error);
+                });
+        </script>
+
+
+        <script>
+            // Make a GET request to your Express server
+            fetch('https://ocp404circsupply.vercel.app/api/circulatingsupply')
+                .then(response => response.json())
+                .then(data => {
+                    // Update the HTML element with the received value
+                    const circulatingSupplyFormatted = parseFloat(data.circulatingSupply).toFixed(2);
+                    document.getElementById('circulatingSupplyElement').innerText = `${circulatingSupplyFormatted}`;
                 })
                 .catch(error => {
                     console.error('Error fetching total supply:', error);
