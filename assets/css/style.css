@@ -186,6 +186,10 @@ select,
 textarea {
   font-family: "Source Sans Pro", Helvetica, sans-serif; }
 
+br{
+  display:block !important;
+}
+
 a {
   color: #ca3c08;
   text-decoration: none; }
