@@ -2,10 +2,10 @@
  * Basic Count Up from Date and Time
  * Author: @mrwigster / https://guwii.com/bytes/count-date-time-javascript/
  */
-window.onload = function() {
+document.addEventListener('DOMContentLoaded', function() {
   // Month Day, Year Hour:Minute:Second, id-of-element-container
-  countUpFromTime("Feb 10, 2024 10:21:47", 'countup1'); 
-};
+  countUpFromTime("Feb 10, 2024 00:00:00", 'countup1'); 
+});
 function countUpFromTime(countFrom, id) {
   countFrom = new Date(countFrom).getTime();
   var now = new Date(),
